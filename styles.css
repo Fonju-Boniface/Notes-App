@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
+:root {
+  --white: #fff;
+  --black: #1c2b2d;
+  --blue: #31326f;
+  --light-blue: #005490;
+  --color-primary: #9d0191;
+  --color-sec: #db6400;
+  --grey: #eee;
+  --dark-grey: #222831;
+  --dark-greyop: #222831ac;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--grey);
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Start Here */
+.section-container {
+  display: flex;
+  padding-top: 2rem;
+  width: 100%;
+}
+
+.form-container {
+  width: 30%;
+}
+.notes-container {
+  width: 70%;
+}
+
+form > * {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  outline: none;
+  font-size: 1.6rem;
+  padding: 7px;
+  border: 1px solid #777;
+  border-radius: 3px;
+  width: 100%;
+}
+
+form textarea {
+  height: 10rem;
+}
+
+.notes-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.note {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 3px;
+  margin: 1rem 0;
+  width: 100%;
+
+}
+
+.note-cta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.note-counter {
+  font-size: 1.4rem;
+  background-color: var(--dark-grey);
+  padding: 1px 3px;
+  display: inline-block;
+  color: var(--white);
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.note-btn {
+  padding: 5px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  background: red;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: var(--color-primary);
+}
+
+.note-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.note-title small{
+  color: var(--black);
+}
+
+.note-text{
+  font-size: 1.4rem;
+  min-height: 150px;
+  background: var(--dark-greyop);
+  padding: .3rem;
+  color: var(--grey);
+  border-radius: 3px;
+}
+.note-text, .tutorName {
+  font-size: 1.4rem;
+}
+p.tutorName{
+  color: var(--color-sec);
+  width: 100% !important;
+  text-align: right;
+  /* background: red; */
+}
