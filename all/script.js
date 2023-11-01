@@ -5,24 +5,6 @@ const noteBtn = document.getElementById("add-btn"),
   noteText = document.getElementById("note-text"),
   clear = document.querySelector(".clear");
 
-let datt = new Date();
-let Hours = datt.getHours();
-let Minutes = datt.getMinutes();
-let Seconds = datt.getSeconds();
-let Days = datt.getDate()
-let Months = datt.getMonth()
-let Years = datt.getFullYear()
-// alert(Seconds);
-
-let AMPM = "am"
-if (Hours > 12) {
-  AMPM = "pm"
-  
-}
-
-let MainTime = `<span>=> <i>${Hours}</i>:<i>${Minutes}</i>:<i>${Seconds}</i> <b>${AMPM}</b></span>`
-let MainDate = `<span>=> <i>${Days}</i>/<i>${Months}</i>/<i>${Years}</i></b></span>`
-
 //   Get notes from local storage
 function getNotes() {
   let notes = localStorage.getItem("notes");
@@ -37,12 +19,7 @@ function getNotes() {
 noteBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  if (
-    noteTitle.value == "" ||
-    noteText.value == "" ||
-    noteSubject.value == "" ||
-    Tutor.value == ""
-  ) {
+  if (noteTitle.value == "" || noteText.value == "" || noteSubject.value == "" || Tutor.value == "") {
     return alert("please add note title and details");
   }
 
@@ -53,8 +30,6 @@ noteBtn.addEventListener("click", (e) => {
     text: noteText.value,
     Subject: noteSubject.value,
     tutor: Tutor.value,
-    Timing: MainTime,
-    Dattes: MainDate,
   };
   notesObj.push(myObj);
   localStorage.setItem("notes", JSON.stringify(notesObj));
@@ -85,17 +60,16 @@ function showNotes() {
         <h1 class="note-title">Subject/Course: ${element.Subject}</h1>
         <h3 class="note-title">Topic: <small>${element.title}</small></h3>
         <p class="note-text">${element.text}</p>
-        
-        
-        <p class="tutorName"><b>Date: ${element.Dattes}</b> <b>Time: ${element.Timing}</b> <b>Tutor: ${element.tutor}</b></p>
+        <p class="tutorName">Tutor: ${element.tutor}</p>
       </div>
         `;
-    let count = index + 1;
-    let countPlu = "Note";
-    if (count > 1) {
-      countPlu = "Notes";
-    }
-    document.getElementById("Length").innerHTML = index + 1 + countPlu;
+        let count = index+1
+        let countPlu = "Note"
+        if (count > 1) {
+          
+          countPlu = "Notes"
+        }
+        document.getElementById("Length").innerHTML = (index+1) + countPlu
   });
   let noteElm = document.getElementById("notes");
 
@@ -125,12 +99,7 @@ clear.addEventListener("click", () => {
 
 // Edit note
 function editNote(index) {
-  if (
-    noteTitle.value !== "" ||
-    noteText.value !== "" ||
-    noteSubject.value !== "" ||
-    Tutor.value !== ""
-  ) {
+  if (noteTitle.value !== "" || noteText.value !== "" || noteSubject.value !== "" || Tutor.value !== "") {
     return alert("Please clear the form before editing");
   }
   getNotes();
@@ -138,12 +107,7 @@ function editNote(index) {
   noteTitle.value = notesObj[index].title;
   noteText.value = notesObj[index].text;
   noteSubject.value = notesObj[index].Subject;
-    // Dattes: MainDate,
-    Tutor.value = notesObj[index].tutor;
-  Timing = notesObj[index].MainTime;
-  Dattes = notesObj[index].MainDate;
-
-  // Timing: MainTime,
+  Tutor.value = notesObj[index].tutor;
 
   notesObj.splice(index, 1);
   localStorage.setItem("notes", JSON.stringify(notesObj));

@@ -54,11 +54,7 @@ img {
 }
 .notes-container {
   width: 70%;
-  margin-bottom: .5rem;
 }
-/* .notes-container h2{
-  color: red;
-} */
 
 form > * {
   display: flex;
@@ -93,15 +89,8 @@ form textarea {
 .note-cta {
   display: flex;
   justify-content: space-between;
-  margin-bottom: .5rem;
-  /* background: pink; */
 }
-h1.note-title, h3.note-title{
-  margin-top: .5rem;
-}
-h3.note-title{
-  margin-bottom: .5rem;
-}
+
 .note-counter {
   font-size: 1.4rem;
   background-color: var(--dark-grey);
@@ -151,7 +140,4 @@ p.tutorName{
   width: 100% !important;
   text-align: right;
   /* background: red; */
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
 }
