@@ -20,7 +20,7 @@ if (Hours > 12) {
   
 }
 
-let MainTime = `<span>=> <i>${Hours}</i>:<i>${Minutes}</i>:<i>${Seconds}</i> <b>${AMPM}</b></span>`
+let MainTime = `<span>=> <i>${Hours}</i> : <i>${Minutes}</i> : <i>${Seconds}</i> <b>${AMPM}</b></span>`
 let MainDate = `<span>=> <i>${Days}</i>/<i>${Months}</i>/<i>${Years}</i></b></span>`
 
 //   Get notes from local storage
